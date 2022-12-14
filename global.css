@@ -1,0 +1,10 @@
+:root {
+  /* fonts */
+  --font-kodchasan: Kodchasan;
+
+  /* Colors */
+  --color-white: #fff;
+
+  /* border radiuses */
+  --br-md: 23px;
+}

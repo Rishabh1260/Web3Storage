@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kodchasan:wght@400&display=swap"
+    />
+  </head>
+  <body>
+    <div class="desktop-1">
+      <img class="vector-icon" alt="" src="public/vector-1.svg" /><img
+        class="ellipse-icon"
+        alt=""
+        src="public/ellipse-2.svg"
+      /><img class="vector-icon1" alt="" src="public/vector.svg" /><img
+        class="vector-icon2"
+        alt=""
+        src="public/vector1.svg"
+      />
+      <div class="rectangle-div"></div>
+      <img class="vector-icon3" alt="" /><img
+        class="vector-icon4"
+        alt=""
+        src="public/vector-3.svg"
+      />
+      <div class="upload-files-in-web3-storge">
+        <p class="upload-files">Upload Files</p>
+        <p class="upload-files">in</p>
+        <p class="web3-storge">web3 storge...</p>
+      </div>
+
+      <input type="file" id = "real-file"  hidden = "hidden"/>
+      <div class="group-div">
+        <input type="file" id="real-file" hidden="hidden" />
+        <button type="button" id="custom-button">CHOOSE A FILE      </button>
+        <span id="custom-text">No file chosen, yet.</span>
+      
+      </div>
+
+      <button class="upload-button" id="uploadButton">
+        <div class="rectangle-div1"></div>
+        <div class="upload">Upload</div></button
+      ><img class="vector-icon5" alt="" src="public/vector-2.svg" />
+    </div>
+
+    <script>
+
+const realFileBtn = document.getElementById("real-file");
+const customBtn = document.getElementById("custom-button");
+const customTxt = document.getElementById("custom-text");
+
+customBtn.addEventListener("click", function() {
+  realFileBtn.click();
+});
+
+realFileBtn.addEventListener("change", function() {
+  if (realFileBtn.value) {
+    customTxt.innerHTML = realFileBtn.value.match(
+      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+    )[1];
+  } else {
+    customTxt.innerHTML = "No file chosen, yet.";
+  }
+});
+
+
+      var uploadButton = document.getElementById("uploadButton");
+      if (uploadButton) {
+        uploadButton.addEventListener("click", function () {
+          window.open("amazon.in");
+        });
+      }
+
+
+      </script>
+  </body>
+</html>
