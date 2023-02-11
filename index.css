@@ -1,3 +1,5 @@
+
+
 @keyframes shadow-drop-bottom {
   0% {
     box-shadow: 0 0 0 0 transparent;
@@ -6,10 +8,21 @@
     box-shadow: 0 12px 20px -12px rgb(0 0 0/35%);
   }
 }
+
+@keyframes move-blob {
+  0% {
+    transform: translate(1200px, 0px);
+  }
+  100% {
+    transform: translate(-1700px, 1300px);
+  }
+}
+
 body {
   margin: 0;
   line-height: normal;
   background-color: #000;
+  overflow: hidden;
 }
 
 #custom-button {
@@ -31,7 +44,7 @@ body {
 
 #custom-text {
   
-  margin-top: -50px;
+  margin-top: -60px;
   font-size: 30%;
   font-family: sans-serif;
   color: #aaa;
@@ -56,17 +69,21 @@ body {
   right: -111px;
   width: 320px;
   height: 298px;
+  animation: movesvg 10s linear infinite
 }
-.vector-icon2 {
-  position: absolute;
+
+
+.blob {
+position: absolute;
+  right: 0;
   top: 0;
   left: 0;
-  width: 350px;
+  width: 320px;
   height: 348px;
 }
 .rectangle-div {
   position: absolute;
-  height: calc(100% - 273px);
+  height: calc(100% - 450px);
   width: calc(100% - 207px);
   top: 130px;
   right: 102px;
@@ -76,7 +93,7 @@ body {
   background-color: rgba(217, 217, 217, 0.02);
   box-shadow: 102px -102px 102px rgba(165, 165, 165, 0.02) inset,
     -102px 102px 102px rgba(255, 255, 255, 0.02) inset;
-  backdrop-filter: blur(100px);
+  backdrop-filter: blur(80px);
 }
 .vector-icon3 {
   position: absolute;
@@ -104,8 +121,8 @@ body {
 .upload-files-in-web3-storge {
   position: absolute;
   width: calc(100% - 1011px);
-  top: 356px;
-  left: 205px;
+  top: 252px;
+  left: 253px;
   background: linear-gradient(
     120.74deg,
     #8f07e2 45.03%,
@@ -116,6 +133,9 @@ body {
   -webkit-text-fill-color: transparent;
   display: inline-block;
 }
+  
+  
+
 .rectangle-input {
   position: absolute;
   top: 8px;
@@ -139,29 +159,37 @@ body {
   height: 96.43px;
 }
 .choose-file {
-  top: 23px;
+  top: 10px;
   right: 99px;
   font-size: 33px;
-  width: 257px;
+  width: 200px;
   height: 59px;
 }
 .group-div {
   position: absolute;
-  top: 422px;
+  top: 300px;
   right: 211px;
   width: 377px;
-  height: 150px;
-  font-size: 58px;
+  height: 258px;
+  font-size: 15px;
 }
+.file-names {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
 .rectangle-div1 {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 123px;
+  right: 25px;
   border-radius: var(--br-md);
   background: linear-gradient(102.86deg, #5a1c49, #3f0b3d);
   width: 202px;
   height: 62px;
 }
+
+
 .upload {
   position: absolute;
   top: 13.48px;
@@ -182,8 +210,8 @@ body {
   position: absolute;
   top: 537px;
   right: 252px;
-  width: 202px;
-  height: 62px;
+  width: 190px;
+  height: 55px;
 }
 .vector-icon5 {
   position: absolute;

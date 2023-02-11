@@ -17,11 +17,11 @@
         class="ellipse-icon"
         alt=""
         src="public/ellipse-2.svg"
-      /><img class="vector-icon1" alt="" src="public/vector.svg" /><img
-        class="vector-icon2"
-        alt=""
-        src="public/vector1.svg"
       />
+      
+      <img class="blob" alt="" src="public/blob.svg" width="500" height="150" /><img/>
+
+
       <div class="rectangle-div"></div>
       <img class="vector-icon3" alt="" /><img
         class="vector-icon4"
@@ -36,46 +36,75 @@
 
       <input type="file" id = "real-file"  hidden = "hidden"/>
       <div class="group-div">
+        <button id="custom-button" >Attach File</button>
         <input type="file" id="real-file" hidden="hidden" />
-        <button type="button" id="custom-button">CHOOSE A FILE      </button>
-        <span id="custom-text">No file chosen, yet.</span>
+
+        <div class="rectangle-div1">
+          <button id="uploadButton" hidden = "hidden"></button>
+          <div class="upload">Upload</div></button>
+          <img class="vector-icon5" alt="" src="public/vector-2.svg" />
+         </div>
+        <!-- <button type="button" id="custom-buttonx">CHOOSE A FILE</button> -->
+        <p id="file-names"></p>
+        
+        
+        
       
       </div>
 
-      <button class="upload-button" id="uploadButton">
-        <div class="rectangle-div1"></div>
-        <div class="upload">Upload</div></button
-      ><img class="vector-icon5" alt="" src="public/vector-2.svg" />
+      
+        
     </div>
+    <script src="three.r134.min.js"></script>
+    <script src="vanta.net.min.js"></script>
 
     <script>
 
-const realFileBtn = document.getElementById("real-file");
-const customBtn = document.getElementById("custom-button");
-const customTxt = document.getElementById("custom-text");
+const attachBtn = document.getElementById("custom-button");
+  const fileNames = document.getElementById("file-names");
 
-customBtn.addEventListener("click", function() {
-  realFileBtn.click();
-});
+  attachBtn.addEventListener("click", function() {
+    const input = document.createElement("input");
+    input.setAttribute("type", "file");
+    input.setAttribute("multiple", "multiple");
+    input.style.display = "none";
+    document.body.appendChild(input);
+    input.click();
 
-realFileBtn.addEventListener("change", function() {
-  if (realFileBtn.value) {
-    customTxt.innerHTML = realFileBtn.value.match(
-      /[\/\\]([\w\d\s\.\-\(\)]+)$/
-    )[1];
-  } else {
-    customTxt.innerHTML = "No file chosen, yet.";
-  }
-});
-
-
-      var uploadButton = document.getElementById("uploadButton");
-      if (uploadButton) {
-        uploadButton.addEventListener("click", function () {
-          window.open("amazon.in");
-        });
+    input.addEventListener("change", function() {
+      const fileList = input.files;
+      let names = "";
+      for (let i = 0; i < fileList.length; i++) {
+        names += fileList[i].name + ", ";
       }
+      fileNames.textContent = names;
+    });
+  });
+    
 
+
+const blob = document.querySelector('.blob');
+
+setTimeout(() => {
+  blob.style.animation = 'move-blob 30s linear infinite';
+}, 1);
+
+
+VANTA.NET({
+  el: "#your-element-selector",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00
+})
+
+
+
+         
+  
 
       </script>
   </body>
